@@ -1,0 +1,24 @@
+﻿  Building 'MyNetworkFilter' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Debug\MyNetworkFilter.inf
+  Stamping [Version] section with DriverVer=08/21/2020,9.55.55.490
+C:\Users\Avinash Ranjan\source\repos\MyNetworkFilter\MyNetworkFilter.inf : warning 1420: [DefaultInstall]-based INF cannot be processed as Primitive.
+C:\Users\Avinash Ranjan\source\repos\MyNetworkFilter\MyNetworkFilter.inf(38-38): warning 1205: Section [MyNetworkFilter.DriverFiles] referenced from DelFiles and CopyFiles directive.
+  Source.c
+  MyNetworkFilter.vcxproj -> C:\Users\Avinash Ranjan\source\repos\MyNetworkFilter\x64\Debug\MyNetworkFilter.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\Avinash Ranjan\source\repos\MyNetworkFilter\x64\Debug\MyNetworkFilter.sys
+  
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\Avinash Ranjan\source\repos\MyNetworkFilter\x64\Debug\MyNetworkFilter\mynetworkfilter.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\Avinash Ranjan\source\repos\MyNetworkFilter\x64\Debug\MyNetworkFilter\mynetworkfilter.cat
+  

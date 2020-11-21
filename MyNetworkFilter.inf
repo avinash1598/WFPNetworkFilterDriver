@@ -1,0 +1,54 @@
+;
+; MyNetworkFilter.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171}
+Provider=%ManufacturerName%
+CatalogFile=MyNetworkFilter.cat
+DriverVer = 05/06/2020,1.2
+PnpLockDown=1
+
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+MyNetworkFilter.sys  = 1
+
+[DestinationDirs]
+DefaultDestDir = 12 ; %windir%\system32\drivers
+MyNetworkFilter.DriverFiles = 12 ; %windir%\system32\drivers
+
+[DefaultInstall.ntarm]
+OptionDesc = %Description% 
+CopyFiles = MyNetworkFilter.DriverFiles
+
+[DefaultInstall.ntarm.Services]
+AddService = %ServiceName%,,MyNetworkFilter.Service
+
+[DefaultUninstall.ntarm]
+DelFiles = MyNetworkFilter.DriverFiles
+
+[DefaultUninstall.ntarm.Services]
+DelService = MyNetworkFilter,0x200 ; SPSVCINST_STOPSERVICE
+
+[MyNetworkFilter.DriverFiles]
+MyNetworkFilter.sys,,,0x00000040 ; COPYFLG_OVERWRITE_OLDER_ONLY
+
+; -------------- MyNetworkFilter driver install sections
+[MyNetworkFilter.Service]
+DisplayName    = %ServiceName%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\MyNetworkFilter.sys
+
+[Strings]
+ManufacturerName="Ranjan Bros" ;TODO: Replace with your manufacturer name
+DiskName = "MyNetworkFilter Installation Disk"
+Description = "My custom Callout Network filter"
+ServiceName = "MyNetworkFilter"
+ServiceDesc = "MyNetworkFilter"
